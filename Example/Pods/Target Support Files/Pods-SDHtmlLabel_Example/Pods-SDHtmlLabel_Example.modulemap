@@ -1,0 +1,6 @@
+framework module Pods_SDHtmlLabel_Example {
+  umbrella header "Pods-SDHtmlLabel_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

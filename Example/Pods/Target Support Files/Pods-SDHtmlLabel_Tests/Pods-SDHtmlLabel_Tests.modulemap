@@ -1,0 +1,6 @@
+framework module Pods_SDHtmlLabel_Tests {
+  umbrella header "Pods-SDHtmlLabel_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

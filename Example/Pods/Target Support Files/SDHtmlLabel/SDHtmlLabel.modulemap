@@ -1,0 +1,6 @@
+framework module SDHtmlLabel {
+  umbrella header "SDHtmlLabel-umbrella.h"
+
+  export *
+  module * { export * }
+}

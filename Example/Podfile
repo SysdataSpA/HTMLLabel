@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SDHtmlLabel_Example' do
+  pod 'SDHtmlLabel', :path => '../'
+
+  target 'SDHtmlLabel_Tests' do
+    inherit! :search_paths
+    pod 'FBSnapshotTestCase'
+    
+  end
+end

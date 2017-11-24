@@ -1,0 +1,23 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - SDHtmlLabel (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - SDHtmlLabel (from `../`)
+
+EXTERNAL SOURCES:
+  SDHtmlLabel:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  SDHtmlLabel: ec8d382ba6290d83f3eff2cc6dd5a3e0425bb9fd
+
+PODFILE CHECKSUM: 300fbe0b12641db6c684509a22588600d44f5755
+
+COCOAPODS: 1.3.1

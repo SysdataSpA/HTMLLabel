@@ -1,0 +1,23 @@
+{
+  "name": "SDHtmlLabel",
+  "version": "0.1.0",
+  "summary": "A short description of SDHtmlLabel.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Lorenzo Rossi/SDHtmlLabel",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Lorenzo Rossi": "lorenzo.rossi@kettydo.com"
+  },
+  "source": {
+    "git": "https://github.com/Lorenzo Rossi/SDHtmlLabel.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SDHtmlLabel/Classes/**/*",
+  "public_header_files": "Pod/Classes/**/*.h"
+}
