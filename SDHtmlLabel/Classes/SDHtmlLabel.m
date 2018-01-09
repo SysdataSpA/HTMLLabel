@@ -10,7 +10,7 @@
 
 @implementation SDHtmlLabel
 {
-    NSString *_htmlSource;
+    NSString *_textHtmlStripped;
     BOOL _htmlLoading;
 }
 
@@ -33,40 +33,49 @@ static NSArray *_tagWhiteList;
                       @"big", @"strong", @"small", @"strike", @"code", @"em", @"cite", @"i", @"b", @"u", @"tt"];
 }
 
-- (void)setHtmlText:(NSString*)htmlText
+- (void)setTextHtml:(NSString*)textHtml
 {
-    NSArray *whiteList = _tagWhiteList;
-    if ([_delegate respondsToSelector:@selector(getCustomTagWhiteList)])
-        whiteList = [_delegate getCustomTagWhiteList];
-        
-    _htmlSource = [self stripHtml:htmlText withTagWhiteList:whiteList];
+    _textHtml = textHtml;
     
-    NSString *htmlWithFont = [self getHtmlWithLabelFont];
+    NSArray *whiteList = _tagWhiteList;
+    if ([_delegate respondsToSelector:@selector(getCustomTagWhiteList:)])
+        whiteList = [_delegate getCustomTagWhiteList:self];
+        
+    _textHtmlStripped = [self stripHtml:textHtml withTagWhiteList:whiteList];
+    
+    NSString *htmlWithFont = [self getHtmlWithStyle];
     [self setHtmlAttributedString:htmlWithFont];
 }
 
 - (void)setText:(NSString *)text
 {
-    if (_htmlSource)
-        _htmlSource = nil;
+    if (_textHtmlStripped)
+        _textHtmlStripped = nil;
     
     [super setText:text];
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText
 {
-    if (_htmlSource && !_htmlLoading)
-        _htmlSource = nil;
+    if (_textHtmlStripped && !_htmlLoading)
+        _textHtmlStripped = nil;
     
     [super setAttributedText:attributedText];
 }
 
-- (NSString*)getHtmlWithLabelFont
+- (NSString*)getHtmlWithStyle
 {
+    if ([_delegate respondsToSelector:@selector(getDefaultStyle:)]) {
+        SDHtmlStyle *defaultStyle = [_delegate getDefaultStyle:self];
+        if (defaultStyle) {
+            return [defaultStyle applyHtmlStyleToString:_textHtmlStripped];
+        }
+    }
+    
     return [NSString stringWithFormat:@"<span style=\"font-family:'%@'; font-size:'%fpx';\">%@</span>",
             self.font.fontName,
             self.font.pointSize,
-            _htmlSource];
+            _textHtmlStripped];
 }
 
 - (void)setHtmlAttributedString:(NSString*)htmlText
@@ -87,8 +96,8 @@ static NSArray *_tagWhiteList;
 - (void)setFont:(UIFont *)font {
     [super setFont:font];
     
-    if (_htmlSource) {
-        NSString *htmlWithFont = [self getHtmlWithLabelFont];
+    if (_textHtmlStripped) {
+        NSString *htmlWithFont = [self getHtmlWithStyle];
         [self setHtmlAttributedString:htmlWithFont];
     }
 }

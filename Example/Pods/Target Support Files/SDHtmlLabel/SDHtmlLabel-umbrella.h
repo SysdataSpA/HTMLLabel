@@ -11,6 +11,7 @@
 #endif
 
 #import "SDHtmlLabel.h"
+#import "SDHtmlStyle.h"
 
 FOUNDATION_EXPORT double SDHtmlLabelVersionNumber;
 FOUNDATION_EXPORT const unsigned char SDHtmlLabelVersionString[];

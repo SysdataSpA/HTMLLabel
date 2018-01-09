@@ -9,12 +9,13 @@
 #import "SDViewController.h"
 #import <SDHtmlLabel/SDHtmlLabel.h>
 
-@interface SDViewController ()
+@interface SDViewController () <SDHtmlLabelProtocol>
 @property (weak, nonatomic) IBOutlet SDHtmlLabel *lblHtml;
 @end
 
 @implementation SDViewController
 {
+    SDHtmlStyle *_style;
     NSString *_htmlString;
 }
 
@@ -28,11 +29,12 @@
                                                      ofType:@"html"];
     _htmlString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     
-    [_lblHtml setHtmlText:_htmlString];
+    _lblHtml.delegate = self;
+    _lblHtml.textHtml = _htmlString;
 }
 
 - (IBAction)loadHtml:(id)sender {
-    [_lblHtml setHtmlText:_htmlString];
+    _lblHtml.textHtml = _htmlString;
     _lblHtml.font = [UIFont systemFontOfSize:_lblHtml.font.pointSize];
 }
 
@@ -42,6 +44,24 @@
 
 - (IBAction)loadPlainText:(id)sender {
     _lblHtml.text = @"This is plain text";
+}
+
+#pragma mark SDHtmlLabel delegate
+- (SDHtmlStyle *)getDefaultStyle:(SDHtmlLabel*)sender {
+    if (!_style) {
+        _style = [SDHtmlStyle new];
+        
+        SDHtmlStyleElement *bodyStyle = [SDHtmlStyleElement new];
+        bodyStyle.fontFamily = @"Pacifico";
+        bodyStyle.fontSize = 16;
+        bodyStyle.textColor = @"#5b8e11";
+        bodyStyle.textAlign = @"center";
+        bodyStyle.textLineHeight = 50;
+        
+        _style.bodyStyle = bodyStyle;
+    }
+    
+    return _style;
 }
 
 @end

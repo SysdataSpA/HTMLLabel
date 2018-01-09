@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDHtmlStyle.h"
+
+@class SDHtmlLabel;
 
 @protocol SDHtmlLabelProtocol <NSObject>
 
 @optional
-- (NSArray*)getCustomTagWhiteList;
+- (NSArray*)getCustomTagWhiteList:(SDHtmlLabel*)sender;
+- (SDHtmlStyle*)getDefaultStyle:(SDHtmlLabel*)sender;
 
 @end
 
@@ -19,6 +23,6 @@
 
 @property (nonatomic, weak) id<SDHtmlLabelProtocol> delegate;
 
-- (void)setHtmlText:(NSString*)htmlText;
+@property (nonatomic, strong) NSString* textHtml;
 
 @end
