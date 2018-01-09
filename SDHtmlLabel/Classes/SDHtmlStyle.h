@@ -9,11 +9,11 @@
 
 @interface SDHtmlStyleElement : NSObject
 
-@property (nonatomic, strong) NSString* fontFamily;
-@property (nonatomic, assign) int       fontSize;
-@property (nonatomic, strong) NSString* textColor;
-@property (nonatomic, strong) NSString* textAlign;
-@property (nonatomic, assign) int       textLineHeight;
+@property (nonatomic, strong) NSString*         fontFamily;
+@property (nonatomic, assign) int               fontSize;
+@property (nonatomic, strong) UIColor*          textColor;
+@property (nonatomic, assign) NSTextAlignment   textAlign;
+@property (nonatomic, assign) int               textLineHeight;
 
 @end
 

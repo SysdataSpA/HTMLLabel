@@ -54,8 +54,8 @@
         SDHtmlStyleElement *bodyStyle = [SDHtmlStyleElement new];
         bodyStyle.fontFamily = @"Pacifico";
         bodyStyle.fontSize = 16;
-        bodyStyle.textColor = @"#5b8e11";
-        bodyStyle.textAlign = @"center";
+        bodyStyle.textColor = UIColor.greenColor;
+        bodyStyle.textAlign = NSTextAlignmentCenter;
         bodyStyle.textLineHeight = 50;
         
         _style.bodyStyle = bodyStyle;

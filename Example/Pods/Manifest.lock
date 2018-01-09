@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - SDHtmlLabel (1.1)
+  - SDHtmlLabel (1.1.1)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  SDHtmlLabel: 9b438961998c5007c7ce2a4b222fccc6d413bd93
+  SDHtmlLabel: 0176615d0497a7bf9bb10e71eb08bdebe028b703
 
 PODFILE CHECKSUM: 300fbe0b12641db6c684509a22588600d44f5755
 
