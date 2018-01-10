@@ -1,5 +1,5 @@
 PODS:
-  - SDHtmlLabel (1.1.3)
+  - SDHtmlLabel (1.1.4)
 
 DEPENDENCIES:
   - SDHtmlLabel (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SDHtmlLabel: b3c4ae9dc958fe107742eee163a23531f4461ae8
+  SDHtmlLabel: 4638e85a71bcd1e4a94656e24540811a9df7127d
 
 PODFILE CHECKSUM: 6eb6d149bbeb9a6e1d6a515292766a97c1b0d578
 

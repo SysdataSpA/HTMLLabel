@@ -22,15 +22,15 @@
     }
     
     if (_h1Style) {
-        [finalString appendFormat:@"h1 {display: inline;%@}", [self createStyleAttributeFromStyleElement: _h1Style]];
+        [finalString appendFormat:@"h1 {%@}", [self createStyleAttributeFromStyleElement: _h1Style]];
     }
     
     if (_h2Style) {
-        [finalString appendFormat:@"h2 {display: inline;%@}", [self createStyleAttributeFromStyleElement: _h2Style]];
+        [finalString appendFormat:@"h2 {%@}", [self createStyleAttributeFromStyleElement: _h2Style]];
     }
     
     if (_h3Style) {
-        [finalString appendFormat:@"h3 {display: inline;%@}", [self createStyleAttributeFromStyleElement: _h3Style]];
+        [finalString appendFormat:@"h3 {%@}", [self createStyleAttributeFromStyleElement: _h3Style]];
     }
     
     if (_pStyle) {
@@ -44,7 +44,13 @@
 
 - (NSString*)createStyleAttributeFromStyleElement:(SDHtmlStyleElement*)styleElement
 {
-    NSMutableString *styleString = [[NSMutableString alloc] initWithString:@"margin: 0; padding: 0;"];
+    NSMutableString *styleString = [NSMutableString new];
+    
+    if (styleElement.additionalCustomAttributes) {
+        for (NSString *key in styleElement.additionalCustomAttributes.allKeys) {
+            [styleString appendString:[NSString stringWithFormat:@"%@: %@;", key, styleElement.additionalCustomAttributes[key]]];
+        }
+    }
     
     if (styleElement.fontFamily.length > 0) {
         [styleString appendString:[NSString stringWithFormat:@"font-family: %@;", styleElement.fontFamily]];

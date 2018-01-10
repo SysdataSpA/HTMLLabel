@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIColor*          textColor;
 @property (nonatomic, assign) NSTextAlignment   textAlign;
 @property (nonatomic, assign) int               textLineHeight;
+@property (nonatomic, strong) NSDictionary*     additionalCustomAttributes;
 
 @end
 
