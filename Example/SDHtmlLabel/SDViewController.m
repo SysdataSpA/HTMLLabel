@@ -53,13 +53,16 @@
         _style = [SDHtmlStyle new];
         
         SDHtmlStyleElement *bodyStyle = [SDHtmlStyleElement new];
-        bodyStyle.fontFamily = @"Pacifico";
         bodyStyle.fontSize = 16;
         bodyStyle.textColor = UIColor.blueColor;
         bodyStyle.textAlign = NSTextAlignmentCenter;
-
+        
+        SDHtmlStyleElement *h2Style = [SDHtmlStyleElement new];
+        h2Style.fontSize = 24;
+        h2Style.textColor = UIColor.blueColor;
         
         _style.bodyStyle = bodyStyle;
+        _style.h2Style = h2Style;
     }
     
     return _style;

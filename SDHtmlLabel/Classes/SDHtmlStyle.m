@@ -22,29 +22,29 @@
     }
     
     if (_h1Style) {
-        [finalString appendFormat:@"h1 {%@}", [self createStyleAttributeFromStyleElement: _h1Style]];
+        [finalString appendFormat:@"h1 {display: inline;%@}", [self createStyleAttributeFromStyleElement: _h1Style]];
     }
     
     if (_h2Style) {
-        [finalString appendFormat:@"h2 {%@}", [self createStyleAttributeFromStyleElement: _h2Style]];
+        [finalString appendFormat:@"h2 {display: inline;%@}", [self createStyleAttributeFromStyleElement: _h2Style]];
     }
     
     if (_h3Style) {
-        [finalString appendFormat:@"h3 {%@}", [self createStyleAttributeFromStyleElement: _h3Style]];
+        [finalString appendFormat:@"h3 {display: inline;%@}", [self createStyleAttributeFromStyleElement: _h3Style]];
     }
     
     if (_pStyle) {
         [finalString appendFormat:@"p {%@}", [self createStyleAttributeFromStyleElement: _pStyle]];
     }
     
-    [finalString appendFormat:@"</style></head><body>%@</body>", htmlString];
+    [finalString appendFormat:@"</style></head><body>%@</body>", htmlString]; //display: inline;
     
     return finalString;
 }
 
 - (NSString*)createStyleAttributeFromStyleElement:(SDHtmlStyleElement*)styleElement
 {
-    NSMutableString *styleString = [[NSMutableString alloc] initWithString:@"display: inline; margin: 0; padding: 0;"];
+    NSMutableString *styleString = [[NSMutableString alloc] initWithString:@"margin: 0; padding: 0;"];
     
     if (styleElement.fontFamily.length > 0) {
         [styleString appendString:[NSString stringWithFormat:@"font-family: %@;", styleElement.fontFamily]];

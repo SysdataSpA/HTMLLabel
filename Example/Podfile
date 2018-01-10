@@ -5,7 +5,5 @@ target 'SDHtmlLabel_Example' do
 
   target 'SDHtmlLabel_Tests' do
     inherit! :search_paths
-    pod 'FBSnapshotTestCase'
-    
   end
 end
