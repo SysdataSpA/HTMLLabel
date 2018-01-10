@@ -1,6 +1,6 @@
 {
   "name": "SDHtmlLabel",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "summary": "UILabel subclass able to manage HTML contents.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/SysdataSpA/HTMLLabel",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/SysdataSpA/HTMLLabel.git",
-    "tag": "1.1.1"
+    "tag": "1.1.2"
   },
   "platforms": {
     "ios": "8.0"

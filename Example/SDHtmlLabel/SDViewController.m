@@ -48,15 +48,16 @@
 
 #pragma mark SDHtmlLabel delegate
 - (SDHtmlStyle *)getDefaultStyle:(SDHtmlLabel*)sender {
+    
     if (!_style) {
         _style = [SDHtmlStyle new];
         
         SDHtmlStyleElement *bodyStyle = [SDHtmlStyleElement new];
         bodyStyle.fontFamily = @"Pacifico";
         bodyStyle.fontSize = 16;
-        bodyStyle.textColor = UIColor.greenColor;
+        bodyStyle.textColor = UIColor.blueColor;
         bodyStyle.textAlign = NSTextAlignmentCenter;
-        bodyStyle.textLineHeight = 50;
+
         
         _style.bodyStyle = bodyStyle;
     }

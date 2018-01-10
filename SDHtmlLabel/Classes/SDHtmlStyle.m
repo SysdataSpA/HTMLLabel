@@ -44,8 +44,8 @@
 
 - (NSString*)createStyleAttributeFromStyleElement:(SDHtmlStyleElement*)styleElement
 {
-    NSMutableString *styleString = [NSMutableString new];
-
+    NSMutableString *styleString = [[NSMutableString alloc] initWithString:@"display: inline; margin: 0; padding: 0;"];
+    
     if (styleElement.fontFamily.length > 0) {
         [styleString appendString:[NSString stringWithFormat:@"font-family: %@;", styleElement.fontFamily]];
     }

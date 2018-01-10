@@ -43,8 +43,8 @@ static NSArray *_tagWhiteList;
         
     _textHtmlStripped = [self stripHtml:textHtml withTagWhiteList:whiteList];
     
-    NSString *htmlWithFont = [self getHtmlWithStyle];
-    [self setHtmlAttributedString:htmlWithFont];
+    NSString *htmlWithStyle = [self getHtmlWithStyle];
+    [self setHtmlAttributedString:htmlWithStyle];
 }
 
 - (void)setText:(NSString *)text
@@ -97,8 +97,8 @@ static NSArray *_tagWhiteList;
     [super setFont:font];
     
     if (_textHtmlStripped) {
-        NSString *htmlWithFont = [self getHtmlWithStyle];
-        [self setHtmlAttributedString:htmlWithFont];
+        NSString *htmlWithStyle = [self getHtmlWithStyle];
+        [self setHtmlAttributedString:htmlWithStyle];
     }
 }
 
