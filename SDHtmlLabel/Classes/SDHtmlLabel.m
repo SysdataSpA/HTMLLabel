@@ -19,16 +19,18 @@ static NSArray *_tagWhiteList;
 + (void)initialize {
     _tagWhiteList = @[@"h1", @"h2", @"h3", @"h4", @"h5", @"h6",
                       @"p",
+                      @"table", @"tr", @"td",
                       //@"a",
                       @"style",
                       @"q",
                       @"br",
                       @"font",
+                      @"sub", @"sup",
                       //@"img",
                       @"hr",
                       @"var",
                       @"center",
-                      @"ul", @"li",
+                      @"ul", @"li", @"ol",
                       @"div", @"span",
                       @"big", @"strong", @"small", @"strike", @"code", @"em", @"cite", @"i", @"b", @"u", @"tt"];
 }
